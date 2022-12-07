@@ -3,7 +3,7 @@ import webbrowser
 import json
 
 CACHE_FILENAME = "cache/cache_final.json"
-MOVIE_LIST_FILENAME = "movie_ids_12_05_2022.json"
+MOVIE_LIST_FILENAME = "cache/movie_ids_12_05_2022.json"
 BASE_URL = "https://api.themoviedb.org/3/movie/"
 API_KEY = "8e82d66faf368b0b37ec9ed221ab3ec7"
 RETRIEVE_DATA = False
