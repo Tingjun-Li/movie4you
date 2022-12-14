@@ -19,43 +19,53 @@
   <main id="content">
     <h1>Movies for you!</h1>
     <p class="welcome_msg">According to the questionair, here are some movies for you! Hope they fit your taste!</p>
+    <br>
     <table>
       <tr>
-        <th>Title</th>
-        <th>Release Date</th>
-        <th>Runtime</th>
-        <th>Genre</th>
-        <th>Language</th>
-        <th>Budget</th>
+        <th class="poster">Poster</th>
+        <th class="description">Description</th>
       </tr>
       {% for movie in movies %}
       <tr>
-        <td>{{ movie.title }}</td>
-        <td>{{ movie.release_date }}</td>
-        <td>{{ movie.runtime }}</td>
+        <td><img src="{{ movie.poster_path }}" alt="Poster for {{ movie.title }}"></td>
         <td>
-          {% for genre in movie.genres[:-1] %}
+          <p><span class="bold">Title: </span>
+            <a href="http://imdb.com/title/{{movie.imdb_id}}">{{ movie.title }}</a>
+          </p>
+          <p><span class="bold">Release Date: </span>{{ movie.release_date }}</p>
+          <p><span class="bold">Runtime: </span>{{ movie.runtime }} minutes</p>
+          <p><span class="bold">Genres: </span>
+            {% for genre in movie.genres[:-1] %}
 
-          {{ genre["name"] }},
+            {{ genre["name"] }},
 
-          {% endfor %}
-          {{ movie.genres[-1]["name"] }}
+            {% endfor %}
+            {{ movie.genres[-1]["name"] }}
+          </p>
+          <p><span class="bold">Overview: </span>{{ movie.overview }}</p>
+          <p><span class="bold">Original Language: </span>{{ movie.original_language }}</p>
+          <p><span class="bold">Budget: </span>${{ movie.budget }}</p>
         </td>
-        <td>{{ movie.original_language }}</td>
-        <td>{{ movie.budget }}</td>
       </tr>
       {% endfor %}
     </table>
 
+    <br>
     <p>Click the following button to get a new set of movies!</p>
     <button onClick="window.location.reload();">Get Another Set</button>
+
     <br>
     <p> If you want to try again with different answers, click the button below!</p>
     <a href="{{ url_for('index') }}">Try again!</a>
 
+    <br>
+    <div id="back_to_top">
+      <a href="#content">Back to top content</a>
+    </div>
+
   </main>
 
-  <footer style="position: absolute; bottom: 5px; left: 10px;">
+  <footer>
     &copy; 2022
   </footer>
 </body>

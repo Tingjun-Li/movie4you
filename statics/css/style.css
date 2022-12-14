@@ -42,15 +42,56 @@ h1 {
 
 table {
     border: 3px solid black;
+    width: 800px;
 }
 
 th,
 td {
-    border: 1px solid black
+    border: 1px solid black;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: larger;
+}
+
+td {
+    text-align: left;
+    vertical-align: middle;
+    height: auto;
+    padding: 10px 10px;
+    /* display: table-cell; */
+    /* padding: 5px; */
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.description {
+    width: 500px;
+}
+
+a {
+    color: blue;
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: purple;
 }
 
 footer {
-    position: absolute;
     bottom: 5px;
     left: 5px;
 }

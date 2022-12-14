@@ -55,6 +55,7 @@ def index():
         print(f"Recievd answers: {answers}. Number of movies: {number_of_movies}")
 
         movie_result = get_movie_by_questionnaire(answers, number_of_movies)
+        print(movie_result[0].poster_path)
         return render_template("result.html", movies=movie_result)
     
     return render_template("index.html")

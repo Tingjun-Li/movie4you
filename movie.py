@@ -1,7 +1,7 @@
 class Movie:
     def __init__(self, json=None):
         """Initialize a Movie object with json input (a dictionary)"""
-        image_url = "https://image.tmdb.org/t/p/w300_and_h450_bestv2/"
+        image_url = "https://image.tmdb.org/t/p/w300_and_h450_bestv2"
         self.adult = json.get("adult") or False
         self.backdrop_path = image_url + (json.get("backdrop_path") or "#")
         self.poster_path = image_url + (json.get("poster_path") or "#")
