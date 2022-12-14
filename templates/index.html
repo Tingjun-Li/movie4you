@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- All of the meta data for the page belongs in the header tag -->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="statics/images/favicon.png">
+  <link rel="stylesheet" href="statics/css/html5reset.css">
+  <link rel="stylesheet" href="statics/css/style.css">
+  <title>Movie4You</title>
+</head>
+
+<body>
+  <header>
+
+  </header>
+
+  <main id="content">
+    <h1>Welcome to movie4you!</h1>
+    <p class="welcome_msg">Here you can find some movies that may meet your interests. Can't wait to see the result?
+      Let's start answering the
+      following questions!
+    </p>
+
+    <br>
+
+    <form action="{{ url_for('index') }}" method="post">
+      <p class="questions">Do you want some movies which has English as its original language?</p>
+      <input type="radio" id="yes" name="english" value="Yes" required>
+      <label for="yes">Yes</label><br>
+      <input type="radio" id="no" name="english" value="No">
+      <label for="no">No</label><br>
+
+      <br>
+
+      <p class="questions">Do you want some movies with high budget?</p>
+      <input type="radio" id="yes" name="budget" value="Yes" required>
+      <label for="yes">Yes</label><br>
+      <input type="radio" id="no" name="budget" value="No">
+      <label for="no">No</label><br>
+
+      <br>
+
+      <p class="questions">Do you want some movies that are longer than 100 minutes?</p>
+      <input type="radio" id="yes" name="runtime" value="Yes" required>
+      <label for="yes">Yes</label><br>
+      <input type="radio" id="no" name="runtime" value="No">
+      <label for="no">No</label><br>
+
+      <br>
+
+      <p class="questions">Do you want some action movies?</p>
+      <input type="radio" id="yes" name="action" value="Yes" required>
+      <label for="yes">Yes</label><br>
+      <input type="radio" id="no" name="action" value="No">
+      <label for="no">No</label><br>
+
+      <br>
+
+      <p class="questions">How many movies do you want? (Give an upper limit!)</p>
+      <input type="number" id="number" name="number_of_movies" min="1" max="10" value="5">
+
+      <br>
+      <input class="button" type="submit" value="Submit">
+    </form>
+
+  </main>
+
+  <footer style="position: absolute; bottom: 5px; left: 10px;">
+    &copy; 2022
+  </footer>
+</body>
+
+</html>

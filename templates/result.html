@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- All of the meta data for the page belongs in the header tag -->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="statics/images/favicon.png">
+  <link rel="stylesheet" href="statics/css/html5reset.css">
+  <link rel="stylesheet" href="statics/css/style.css">
+  <title>Movie4You - Your movies!</title>
+</head>
+
+<body>
+  <header>
+
+  </header>
+
+  <main id="content">
+    <h1>Movies for you!</h1>
+    <p class="welcome_msg">According to the questionair, here are some movies for you! Hope they fit your taste!</p>
+    <table>
+      <tr>
+        <th>Title</th>
+        <th>Release Date</th>
+        <th>Runtime</th>
+        <th>Genre</th>
+        <th>Language</th>
+        <th>Budget</th>
+      </tr>
+      {% for movie in movies %}
+      <tr>
+        <td>{{ movie.title }}</td>
+        <td>{{ movie.release_date }}</td>
+        <td>{{ movie.runtime }}</td>
+        <td>
+          {% for genre in movie.genres[:-1] %}
+
+          {{ genre["name"] }},
+
+          {% endfor %}
+          {{ movie.genres[-1]["name"] }}
+        </td>
+        <td>{{ movie.original_language }}</td>
+        <td>{{ movie.budget }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+
+    <p>Click the following button to get a new set of movies!</p>
+    <button onClick="window.location.reload();">Get Another Set</button>
+    <br>
+    <p> If you want to try again with different answers, click the button below!</p>
+    <a href="{{ url_for('index') }}">Try again!</a>
+
+  </main>
+
+  <footer style="position: absolute; bottom: 5px; left: 10px;">
+    &copy; 2022
+  </footer>
+</body>
+
+</html>
