@@ -2,7 +2,6 @@
 # Name: Tingjun Li
 #
 
-from print_tree import printTree
 from movie import Movie
 import random
 

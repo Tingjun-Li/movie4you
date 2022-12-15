@@ -4,7 +4,7 @@ class Movie:
         image_url = "https://image.tmdb.org/t/p/w300_and_h450_bestv2"
         self.adult = json.get("adult") or False
         self.backdrop_path = image_url + (json.get("backdrop_path") or "#")
-        self.poster_path = image_url + (json.get("poster_path") or "#")
+        self.poster_path = image_url + (json.get("poster_path") or json.get("backdrop_path") or "#")
         self.genres = json.get("genres") or []
         self.budget = json.get("budget") or 0
         self.imdb_id = json.get("imdb_id") or "No ID"
@@ -20,6 +20,7 @@ class Movie:
         self.audiencescore = json.get("audiencescore") or "N/A"
         self.imdb_rating = ""
         self.imdb_popularity = ""
+        self.rotten_tomatoes_url = ""
 
     def info(self):
         """Return a string of the format: TITLE (YEAR)[RATING]"""

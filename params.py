@@ -9,7 +9,7 @@ CACHE_FILENAME = "cache/cache_with_score.json"
 # The base url for the API
 BASE_URL = "https://api.themoviedb.org/3/movie/"
 # URL to Rotten Tomatoes
-ROTTEN_TOMATO_URL = "https://www.rottentomatoes.com/m/"
+ROTTEN_TOMATOES_URL = "https://www.rottentomatoes.com/m/"
 # The Movie API url
 MOVIE_API_URL = "https://api.themoviedb.org/"
 

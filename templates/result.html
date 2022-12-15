@@ -52,8 +52,7 @@
           {% else %}
           <p>TOMATOMETER: {{ movie.tomatometerscore }}%</p>
           <p>AUDIENCE SCORE: {{ movie.audiencescore }}%</p>
-          <p>You can read more reviews on <a href='https://www.rottentomatoes.com/m/{{movie.title.lower().replace(": ","
-              _").replace(" ", "_")}}'>Rotten Tomatoes</a>!</p>
+          <p>You can read more reviews on <a href="{{movie.rotten_tomatoes_url}}">Rotten Tomatoes</a>!</p>
           {% endif %}
         </td>
       </tr>
@@ -62,7 +61,7 @@
 
     <br>
     <p>Click the following button to get a new set of movies!</p>
-    <button onClick="window.location.reload();">Get Another Set</button>
+    <button onClick=" window.location.reload();">Get Another Set</button>
 
     <br>
     <p> If you want to try again with different answers, click the button below!</p>

@@ -2,7 +2,7 @@ import json
 import requests
 from bs4 import BeautifulSoup
 
-from params import MOVIE_API_URL, BASE_URL, ROTTEN_TOMATO_URL
+from params import MOVIE_API_URL, BASE_URL, ROTTEN_TOMATOES_URL
 
 try:
     from movie_api_secrets import API_KEY
@@ -126,7 +126,7 @@ def retrieve_and_save_movie_data(file_name, popularity_threshold=20, save_every=
     save_cache({"movie_details": movie_cache}, f"cache/cache_{i}.json")
 
 def retrieve_rottentomato_score(movie_title):
-    base_url = ROTTEN_TOMATO_URL
+    base_url = ROTTEN_TOMATOES_URL
     movie_name = movie_title.lower().replace(": ","_").replace(" ", "_")
     movie_url = base_url + movie_name
     response = requests.get(movie_url)
