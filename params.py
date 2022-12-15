@@ -20,5 +20,5 @@ TREE_FILE = "cache/tree_with_score.txt"
 RETRIEVE_DATA = False
 # If True, reset the tree with new data and update the cache
 RESET_TREE = False
-# If True, run the program in terminal only:
+# If True, run the program in terminal only; Otherwise, run the web app
 RUN_IN_TERMINAL = False
