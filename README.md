@@ -11,5 +11,6 @@ If you don't need to update interact with the movie API, you can skip the follow
 
 ## Run the program:
 1. Download the code: `git clone https://github.com/Tingjun-Li/movie4you.git`
-2. check `params.py` file and change params as you want
-3. run `python3 movie4you.py` and click the link in the terminal (e.g. http://127.0.0.1:5000)
+2. Go to the root folder: `cd movie4you` 
+3. check `params.py` file and change params as you want
+4. run `python3 movie4you.py` and click the link in the terminal (e.g. http://127.0.0.1:5000)
