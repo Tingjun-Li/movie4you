@@ -180,7 +180,7 @@ def findMovies(tree, movies, random_size = 5):
 
 def findMovieByQuestionnaire(tree, movies, number_of_movies, answers):
     """
-    Find movie with given tree and questionair answers.
+    Find movie with given tree and questionnaire answers.
     --------------------
     Parameters:
     tree: a tree

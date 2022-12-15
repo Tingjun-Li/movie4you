@@ -1,7 +1,17 @@
 import json
-from params import BASE_URL
-from movie_api_secrets import API_KEY
 import requests
+from bs4 import BeautifulSoup
+
+from params import MOVIE_API_URL, BASE_URL, ROTTEN_TOMATO_URL
+
+try:
+    from movie_api_secrets import API_KEY
+except ModuleNotFoundError:
+    print("#"*80)
+    print(f"If you want to use the movie API ({MOVIE_API_URL}), you need to create a 'movie_api_secrets.py' file with your API key.\n")
+    print("The file should contain a line: \nAPI_KEY = <YOUR_API_KEY>")
+    print("#"*80)
+
 
 def open_cache(cache_filename):
     """opens the cache file if it exists and loads the JSON into
@@ -61,7 +71,7 @@ def load_movie_ids(file_name):
     
     return json_file
     
-def retrieve_and_save_movie_data(file_name, popularity_threshold=20, save_every=10000, print_every=1000):
+def retrieve_and_save_movie_data(file_name, popularity_threshold=20, save_every=10000, print_every=1):
     """
     Retrieve the movie data from the API
     Parameters
@@ -98,7 +108,11 @@ def retrieve_and_save_movie_data(file_name, popularity_threshold=20, save_every=
                 "api_key": API_KEY,
             }
         )
-        movie_cache.append(response.json())
+        movie = response.json()
+        audiencescore, tomatometerscore = retrieve_rottentomato_score(movie["title"])
+        movie["audiencescore"] = audiencescore
+        movie["tomatometerscore"] = tomatometerscore
+        movie_cache.append(movie)
 
         # There are 
         if len(movie_cache) % save_every == 0:
@@ -110,3 +124,17 @@ def retrieve_and_save_movie_data(file_name, popularity_threshold=20, save_every=
     i += 1
     print(f"Saving the {i}th file, which contains {len(movie_cache)} movies")
     save_cache({"movie_details": movie_cache}, f"cache/cache_{i}.json")
+
+def retrieve_rottentomato_score(movie_title):
+    base_url = ROTTEN_TOMATO_URL
+    movie_name = movie_title.lower().replace(": ","_").replace(" ", "_")
+    movie_url = base_url + movie_name
+    response = requests.get(movie_url)
+    soup = BeautifulSoup(response.text, 'html.parser')
+    score_board = soup.find('score-board')
+    if score_board:
+        audiencescore = score_board["audiencescore"]
+        tomatometerscore = score_board["tomatometerscore"]
+        return audiencescore, tomatometerscore
+    else:
+        return None, None

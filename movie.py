@@ -16,6 +16,10 @@ class Movie:
         self.runtime = json.get("runtime") or 0
         self.vote_average = json.get("vote_average") or 0
         self.vote_count = json.get("vote_count") or 0
+        self.tomatometerscore = json.get("tomatometerscore") or "N/A"
+        self.audiencescore = json.get("audiencescore") or "N/A"
+        self.imdb_rating = ""
+        self.imdb_popularity = ""
 
     def info(self):
         """Return a string of the format: TITLE (YEAR)[RATING]"""

@@ -18,7 +18,7 @@
 
   <main id="content">
     <h1>Movies for you!</h1>
-    <p class="welcome_msg">According to the questionair, here are some movies for you! Hope they fit your taste!</p>
+    <p class="welcome_msg">According to the questionnaire, here are some movies for you! Hope they fit your taste!</p>
     <br>
     <table>
       <tr>
@@ -45,6 +45,16 @@
           <p><span class="bold">Overview: </span>{{ movie.overview }}</p>
           <p><span class="bold">Original Language: </span>{{ movie.original_language }}</p>
           <p><span class="bold">Budget: </span>${{ movie.budget }}</p>
+          <p><span class="bold">Reviewer score from rotten tomatoes: </span></p>
+          {% if movie.tomatometerscore == "N/A" %}
+          <p>Sorry, the score is currently not available. You may search for it on <a
+              href="https://www.rottentomatoes.com/">Rotten Tomatoes</a> directly!</p>
+          {% else %}
+          <p>TOMATOMETER: {{ movie.tomatometerscore }}%</p>
+          <p>AUDIENCE SCORE: {{ movie.audiencescore }}%</p>
+          <p>You can read more reviews on <a href='https://www.rottentomatoes.com/m/{{movie.title.lower().replace(": ","
+              _").replace(" ", "_")}}'>Rotten Tomatoes</a>!</p>
+          {% endif %}
         </td>
       </tr>
       {% endfor %}
