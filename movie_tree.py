@@ -4,6 +4,7 @@
 
 from movie import Movie
 import random
+import params
 
 EMPTY_MOVIE_TREE = (
     "Do you want some movies which has English as its original language?",
@@ -46,6 +47,20 @@ EMPTY_MOVIE_TREE = (
     ),
 )
     
+
+def main():
+    """
+    The main function. It can printout the cached tree
+    --------------------
+    Parameters:
+    None
+    --------------------
+    Return:
+    None
+    """
+    tree_file_handle = open(params.TREE_FILE, "r")
+    tree = loadTree(tree_file_handle)
+    printTree(tree)
 
 def buildTree(movies, tree=None):
     """
@@ -224,4 +239,7 @@ def printTree(tree, prefix = '', bend = '', answer = ''):
             prefix = prefix + '  '
         printTree(left, prefix, '+-', "Yes: ")
         printTree(right, prefix, '`-', "No:  ")
-    
+
+
+if __name__ == "__main__":
+    main()
