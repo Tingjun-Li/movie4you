@@ -9,7 +9,7 @@ def printTree(tree, prefix = '', bend = '', answer = ''):
        ANSWER is a string giving "Yes" or "No" for the current branch."""
     text, left, right = tree
     if left is None  and  right is None:
-        print(f'{prefix}{bend}{answer}It is {text}')
+        print(f'{prefix}{bend}{answer}{text}')
     else:
         print(f'{prefix}{bend}{answer}{text}')
         if bend == '+-':
