@@ -2,7 +2,7 @@
 
 ## Prerequisite:
 1. [flask](https://flask.palletsprojects.com/en/2.2.x/): `pip3 install flask`
-2. [json](https://docs.python.org/3/library/json.html)
+2. [requests](https://requests.readthedocs.io/en/latest/): `pip3 install requests`
 3. [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/): `pip3 install bs4`
 
 If you don't need to update interact with the movie API, you can skip the following step. Otherwise:
