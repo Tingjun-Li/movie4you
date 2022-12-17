@@ -7,7 +7,7 @@
 
 If you don't need to update interact with the movie API, you can skip the following step. Otherwise:
 
-4. Please go to [The Movie Database API](https://developers.themoviedb.org/3/getting-started/introduction) and register for an API key. Put this key into a file `movie_api_secrets.py` in the root folder and name it as `API_KEY=<YOUR_API_KEY>`.
+4. Please go to [The Movie Database API](https://developers.themoviedb.org/3/getting-started/introduction) and register for an API key. Put this key into a file `movie_api_secrets.py` in the root folder and name it as `API_KEY="YOUR_API_KEY"`.
 
 ## Run the program:
 1. Download the code: `git clone https://github.com/Tingjun-Li/movie4you.git`

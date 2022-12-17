@@ -15,6 +15,8 @@ MOVIE_API_URL = "https://api.themoviedb.org/"
 
 # The name of the file containing the tree with categorized movie indices
 TREE_FILE = "cache/tree_with_score.txt"
+TREE_FILE_JSON = "cache/tree_with_score.json"
+
 
 # If True, retrieve data from the API and update it to the cache
 RETRIEVE_DATA = False

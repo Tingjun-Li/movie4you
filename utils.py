@@ -9,7 +9,7 @@ try:
 except ModuleNotFoundError:
     print("#"*80)
     print(f"If you want to use the movie API ({MOVIE_API_URL}), you need to create a 'movie_api_secrets.py' file with your API key.\n")
-    print("The file should contain a line: \nAPI_KEY = <YOUR_API_KEY>")
+    print("The file should contain a line: \nAPI_KEY = 'YOUR_API_KEY'")
     print("#"*80)
 
 
