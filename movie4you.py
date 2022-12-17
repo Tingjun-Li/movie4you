@@ -74,3 +74,5 @@ if __name__ == "__main__":
     else:
         print("starting Flask app", app.name)
         app.run(debug=True)
+        # For Jupyter or IPython users:
+        # app.run(debug=True, use_reloader=False)
