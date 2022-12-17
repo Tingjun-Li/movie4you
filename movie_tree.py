@@ -79,21 +79,26 @@ def buildTree(movies, tree=None):
     for idx, movie_json in enumerate(movies):
         movie = Movie(movie_json)
         movie_answers = []
+
+        # Q1. "Do you want some movies which has English as its original language?"
         if (movie.original_language == "en"):
             movie_answers.append("Yes")
         else:
             movie_answers.append("No")
         
+        # Q2. "Do you want some movies with high budget?"
         if (movie.budget > 50000000):
             movie_answers.append("Yes")
         else:
             movie_answers.append("No")
         
+        # Q3. "Do you want some movies that are longer than 100 minutes?"
         if (movie.runtime > 100):
             movie_answers.append("Yes")
         else:
             movie_answers.append("No")
 
+        # Q4. "Do you want some action movies?"
         if (movie.is_action() == True):
             movie_answers.append("Yes")
         else:
