@@ -44,7 +44,13 @@
           </p>
           <p><span class="bold">Overview: </span>{{ movie.overview }}</p>
           <p><span class="bold">Original Language: </span>{{ movie.original_language }}</p>
-          <p><span class="bold">Budget: </span>${{ movie.budget }}</p>
+          <p><span class="bold">Budget: </span>
+            {% if movie.budget == 0 %}
+            N/A
+            {% else %}
+            ${{ movie.budget }}
+            {% endif %}
+          </p>
           <p><span class="bold">Reviewer score from rotten tomatoes: </span></p>
           {% if movie.tomatometerscore == "N/A" %}
           <p>Sorry, the score is currently not available. You may search for it on <a

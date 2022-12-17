@@ -60,6 +60,7 @@ def main():
     """
     tree_file_handle = open(params.TREE_FILE, "r")
     tree = loadTree(tree_file_handle)
+    tree_file_handle.close()
     printTree(tree)
 
 def buildTree(movies, tree=None):
