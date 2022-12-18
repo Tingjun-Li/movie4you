@@ -14,6 +14,7 @@ If you don't need to update or interact with the movie API, you can skip the fol
 2. Go to the root folder: `cd movie4you` 
 3. check `params.py` file and change params as you want
 4. run `python3 movie4you.py` and click the link in the terminal (e.g. http://127.0.0.1:5000)
+**If you are running the program in IPython or Jupyter, please uncomment the last line in "movie4you.py".**
 
 ## Tree data structure:
 One can run `python3 movie_tree.py` to print out the tree in the terminal. The tree structure has the following pattern:
